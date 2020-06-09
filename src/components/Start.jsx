@@ -2,7 +2,7 @@ import React from 'react';
 const Start = ()=>{
 
     return(
-        <div>Start page</div>
+        <div className="content">Start page</div>
     )
 }
 export default Start;

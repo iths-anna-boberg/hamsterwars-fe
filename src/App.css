@@ -1,51 +1,26 @@
 
-
-.App-header {
-  background-image: linear-gradient(45deg, #f2d5ce 25%, #d98f8f 25%, #d98f8f 50%, #f2d5ce 50%, #f2d5ce 75%, #d98f8f 75%, #d98f8f 100%);
-  background-size: 56.57px 56.57px;
+.hamsterwars-main-container{
+  background-color: var(--pink-rose);
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-header nav{
-  border-top: 3px solid var(--dark-petrol);
-  border-bottom: 3px solid var(--dark-petrol);
-  padding: 1rem 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;  
-  background-color: var(--golden-crest);
+.content{
+  width: 90%;
+  background-color: white;
 }
 
-.App-header nav a{
-  margin: 0 0.7rem;
-  text-decoration: none;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--dark-petrol)
-}
+/* 
+@media screen and (min-width: 600px) {
+  
 
-.App-header nav a:hover{
-  text-decoration: underline;
-}
-
-.logo-container{
-  width: 60%;
-  padding: 1rem 0;
-  display: inline-block;
-}
-
-
-@media screen and (max-width: 600px) {
   .logo-container{
-    width: 90%;
-    padding: .6rem 0;
+    width: 60%;
+    padding: 1rem 0;
     display: inline-block;
   }
-}
+} */
 
 

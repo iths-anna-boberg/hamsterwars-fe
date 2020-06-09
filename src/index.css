@@ -10,7 +10,9 @@
 
 body {
   margin: 0 auto;
+  width: 100vw;
   font-family: 'Quicksand', sans-serif;
+  font-size: 17px;
 }
 
 

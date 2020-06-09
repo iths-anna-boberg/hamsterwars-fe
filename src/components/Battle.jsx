@@ -2,7 +2,7 @@ import React from 'react';
 const Battle = ()=>{
 
     return(
-        <div>Battle</div>
+        <div className="content">Battle</div>
     )
 }
 export default Battle;
