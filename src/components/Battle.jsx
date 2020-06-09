@@ -60,7 +60,7 @@ const Battle = ()=>{
                 <h1>The winner is {winner.name}!</h1>
             </Modal>
             </>
-            :''
+            :null
             }
 
             <h1>Battle</h1>
@@ -82,7 +82,7 @@ const Battle = ()=>{
                         ?<>
                         <div className="hamster-name"><h2>{hamsterTwo.name}</h2></div>
                         <img className="battle-hamster" src={`/assets/${hamsterTwo.imgName}`} alt={hamsterTwo.imgName}/>
-                        <button className="bt-vote" onClick={()=>setWinner(hamsterOne)}>Vote for {hamsterTwo.name}</button>
+                        <button className="bt-vote" onClick={()=>setWinner(hamsterTwo)}>Vote for {hamsterTwo.name}</button>
                         </>
                         : 'no data'}
 
