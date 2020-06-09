@@ -17,6 +17,7 @@ const Navigation = styled.header`
     justify-content: center;
     width: 100vw;
 
+
     .hamburger{
         display: none;
       }
@@ -63,6 +64,14 @@ const Navigation = styled.header`
             width: 100%;  
             background-color: var(--golden-crest);
     
+          }
+      }
+
+      @media screen and (max-width: 820px) and (min-width: 600px){
+          nav{
+              a{
+                  font-size: 1.1rem;
+              }
           }
       }
 

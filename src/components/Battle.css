@@ -1,0 +1,72 @@
+.contestants{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bt-vote{
+    background-color: var(--blush);
+    padding: .9rem 1.7rem;
+    font-size: 1.5rem;
+    font-family: 'Quicksand';
+    color: var(--dark-petrol);
+    font-weight: 700;
+    border: 2px solid var(--pink-rose);
+    border-radius: .6rem;
+    transition: transform 0.5s linear, 
+                background-color 1s ease;
+}
+
+.battle-hamster{
+    border-radius: 1rem;
+    border: 2px solid var(--dark-petrol);
+    padding: 1rem;
+    max-width: 85%;
+}
+
+
+
+.hamster-display{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+
+    .hamster-display{
+        margin-bottom: 3rem;
+    }
+    .battle-hamster{
+        border-radius: 2rem;
+        margin: .7rem;
+        height: 360px;
+    }
+
+    .hamster-name{
+        height: 6rem;
+        display: flex;
+        justify-content: center;
+        background-image: url('../img/banner.svg');
+        background-repeat: no-repeat;
+        background-size: 380px 70px;
+        background-position: center;
+        width: 100%;
+        margin-bottom: -2rem;
+        z-index: 1;
+    }
+
+    .hamster-name h2{
+        font-weight: 700;
+        font-size: 1.7rem;
+        color: var(--dark-petrol);
+    }
+
+    .bt-vote:hover{
+        cursor: pointer;
+        transform: scale(1.1, 1.1);
+        background-color: var(--pink-rose);
+    }
+
+  }
+

@@ -11,18 +11,17 @@ const Battle = ()=>{
     const [winner, setWinner] = useState(null);
     const [showModal, setShowModal] = useState(false);
 
-    const fetchHamsterOne = async ()=>{
-        const resp = await fetch(randomHamster);
-        const json = await resp.json();
-        setHamsterOne(json); 
-    }
-    const fetchHamsterTwo = async ()=>{
-        const resp = await fetch(randomHamster);
-        const json = await resp.json();
-        setHamsterTwo(json); 
-    }
-
     useEffect(()=>{
+        const fetchHamsterOne = async ()=>{
+            const resp = await fetch(randomHamster);
+            const json = await resp.json();
+            setHamsterOne(json); 
+        }
+        const fetchHamsterTwo = async ()=>{
+            const resp = await fetch(randomHamster);
+            const json = await resp.json();
+            setHamsterTwo(json); 
+        }
 
         fetchHamsterOne();
 
@@ -30,33 +29,16 @@ const Battle = ()=>{
 
     },[])
 
-    useEffect(()=>{
-
-        if(winner !==null){
-            setShowModal(true);
-        }
-
-    },[winner])
-
-    useEffect(()=>{
-        if(!showModal){
-            fetchHamsterOne();
-
-            fetchHamsterTwo();
-        }
-    }, [showModal])
-
-    const hideModal = ()=>{
-        setShowModal(false);
+    if(winner !==null){
+        setShowModal(true);
     }
-
 
     return(
         <div className="content">
 
             {showModal
             ?<>
-            <Modal show={showModal} handleClose={hideModal}>
+            <Modal show={showModal}>
                 <h1>The winner is {winner.name}!</h1>
             </Modal>
             </>

@@ -27,6 +27,7 @@ function App() {
           </Switch>
             <main className="hamsterwars-main-container">
             <Switch>
+                
                 <Route path="/battle">
                   <Battle />
                 </Route>

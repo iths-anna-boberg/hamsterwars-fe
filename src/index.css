@@ -13,6 +13,17 @@ body {
   width: 100vw;
   font-family: 'Quicksand', sans-serif;
   font-size: 17px;
+  color: var(--dark-petrol);
 }
+
+@media screen and (min-width: 600px){
+
+    h1{
+      margin-top: 4rem;
+      font-size: 3rem;
+    }
+}
+
+
 
 
