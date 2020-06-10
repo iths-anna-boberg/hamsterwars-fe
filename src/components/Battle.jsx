@@ -5,7 +5,7 @@ import './Battle.css';
 
 const Battle = ()=>{
 
-    const randomHamster = '/hamsters/random';
+    const randomHamster = '/api/hamsters/random';
     const [hamsterOne, setHamsterOne] = useState(null);
     const [hamsterTwo, setHamsterTwo] = useState(null);
     const [winner, setWinner] = useState(null);
