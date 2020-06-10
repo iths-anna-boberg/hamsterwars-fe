@@ -10,7 +10,7 @@ const Modal = ({ handleClose, show, children })=>{
             <section className="modal-main">
             {children}
             
-            <button onClick={handleClose} >Done?</button>   
+            <button className="bt-regular" onClick={handleClose} >Done?</button>   
             </section>
         </div>
     );
