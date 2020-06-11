@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
+import gameHandler from './functions/GameHandler';
 import './Battle.css';
 
 
@@ -20,6 +21,7 @@ const Battle = ()=>{
 
             const resp = await fetch(randomHamster);
             const json = await resp.json();
+            console.log(json.id)
             setState(json); 
         }catch(err){
             console.log(err);
@@ -40,6 +42,14 @@ const Battle = ()=>{
 
         if(winner !==null){
             setShowModal(true);
+            if(winner.id === hamsterOne.id){
+                gameHandler(winner.id, hamsterTwo.id)
+
+            }
+            if(winner.id === hamsterTwo.id){
+                gameHandler(winner.id, hamsterOne.id)
+
+            }
         }
 
     },[winner])

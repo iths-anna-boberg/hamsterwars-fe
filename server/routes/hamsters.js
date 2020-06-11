@@ -86,8 +86,7 @@ router.get('/:id', async (req, res)=>{
 //siffran i body ignoreras, istället använder vi firestores inbyggda incrementfunktion så att man inte kan skicka fel
 router.put('/:id/results', async (req, res)=>{
     try{
-        
-        
+              
         let id = req.params.id*1;
         let hamster;
         let docId;
@@ -99,18 +98,20 @@ router.put('/:id/results', async (req, res)=>{
             docId = el.id; //hämta ut dokumentid på hamster som ska uppdateras
         })
         //Kolla om hamstern vunnit eller förlorat
-        if(req.body.wins === undefined){ //om det inte skickats in att den vunnit har den förlorat
+        if(req.body.defeats === '1' || req.body.defeats === 1){ 
             db.collection('hamsters')
             .doc(docId)
             .update({defeats : fieldValue.increment(1), games: fieldValue.increment(1)})
             .then(res.send({msg: 'defeated hamster was updated'}))
+            .then(console.log('defeated hamster was updated'))
         .catch(err => {throw err});
         }
-        if(req.body.defeats === undefined){//om det inte skickas in att den förlorat har den vunnit
+        if(req.body.wins === '1' || req.body.wins === 1){
             db.collection('hamsters')
             .doc(docId)
             .update({wins : fieldValue.increment(1), games: fieldValue.increment(1)})
             .then(res.send({msg: 'winning hamster was updated'}))
+            .then(console.log('winning hamster was updated'))
         .catch(err => {throw err});
         }
         
