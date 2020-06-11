@@ -15,9 +15,16 @@ const Battle = ()=>{
 
 
     const fetchRandomHamster = async (setState)=>{
-        const resp = await fetch(randomHamster);
-        const json = await resp.json();
-        setState(json); 
+
+        try{
+
+            const resp = await fetch(randomHamster);
+            const json = await resp.json();
+            setState(json); 
+        }catch(err){
+            console.log(err);
+            return null;
+        }
     }
     
 
