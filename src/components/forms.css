@@ -1,4 +1,4 @@
-.form-group{
+/* .form-group{
     padding-top: 1rem;
     max-width: 100%;
     display: flex;
@@ -26,22 +26,22 @@
     justify-content: space-between;
     margin-bottom: .5rem;
     width: 100%;
-}
+} */
 
 .input-area label{
     /* padding: 4.rem; */
     display: block;
 }
-
+/* 
 .input-area input{
-    /* padding: .4rem; */
+    padding: .4rem;
     max-width: 100%;
     box-sizing: border-box;
     display: block;
-}
+} */
 
 
-
+/* 
 #photo-upload{
     margin-top: 1rem;
 }
@@ -55,7 +55,7 @@ input[type=file]{
     color: white;
     font-size: 1.3rem;
     padding: .4rem;
-}
+} */
 
 .valid{
     background-color: palegreen;
@@ -80,7 +80,7 @@ input[type=file]{
 .new-hamster-btn:hover{
     cursor: pointer;
 }
-
+/* 
 form{
     max-width: 80%;
 }
@@ -118,4 +118,4 @@ form{
         display: inline;
     }
 
-}
+} */
