@@ -1,5 +1,5 @@
 
-const postHamster = async (name, favFood, age, loves, imgName)=>{
+const postHamster = async (name, favFood, age, loves, imgName, setState)=>{
 
     let body = {
         name,
@@ -9,7 +9,8 @@ const postHamster = async (name, favFood, age, loves, imgName)=>{
         imgName,
         games : 0,
         wins : 0,
-        defeats: 0
+        defeats: 0,
+        id: Date.now()
     }
 
     try{
@@ -24,8 +25,9 @@ const postHamster = async (name, favFood, age, loves, imgName)=>{
             body: JSON.stringify(body)
         })
 
-        let json = await resp.json()
-        console.log(json.msg)
+        let json = await resp.json();
+        console.log(json.msg);
+        setState(true);
 
     }catch(err){
         console.log(err);

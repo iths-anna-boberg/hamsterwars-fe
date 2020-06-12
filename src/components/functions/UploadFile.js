@@ -1,5 +1,5 @@
 
-const uploadFile = async (file)=>{
+const uploadFile = async (file, setState)=>{
 
     let formData = new FormData();
 
@@ -15,8 +15,9 @@ const uploadFile = async (file)=>{
             },
             body: formData
         })
-        let json = await resp.json()
-        console.log(json.msg)
+        let json = await resp.json();
+        console.log(json.msg);
+        setState(true);
     }catch(err){
         console.log(err)
     }

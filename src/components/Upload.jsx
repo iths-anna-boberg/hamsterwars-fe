@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Modal from './Modal';
 import uploadFile from './functions/UploadFile';
 import postHamster from './functions/PostHamster';
 import validateField from './functions/FormVal';
 import validateAge from './functions/AgeVal';
 import './forms.css';
+
 
 
 const Upload = ()=>{
@@ -29,18 +31,49 @@ const Upload = ()=>{
 
     let formIsValid = inputFieldsTouched && noErrors;
 
+    const [hamsterAdded, setHamsterAdded] = useState(false);
+    const [fileAdded, setFileAdded] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
+    useEffect(()=>{
+
+        if(fileAdded && hamsterAdded){
+            setShowModal(true);
+        }
+    }, [hamsterAdded, fileAdded])
+
+    
     const clickHandler = (e)=>{
         e.preventDefault()
 
         let imgName = file.name;
-        uploadFile(file)
-        postHamster(name, favFood, age, loves, imgName)
+        uploadFile(file, setFileAdded)
+        postHamster(name, favFood, age, loves, imgName, setHamsterAdded)
+    }
+
+    const hideModal = ()=>{
+        setShowModal(false);
+        window.location.reload();
     }
 
 
     return(
         <div className="content">
+            {showModal
+            ?<>
+            <Modal show={showModal} handleClose={hideModal}>
+                <div>
+                    <h2>{name} was added to the hoard of hamsters!</h2>
+                    <p className="preamble">
+                    <img className="winner-hamster" src={`/assets/${file.name}`} alt={name}/>
+                    </p>
+                </div>
+	        </Modal>
+            </>
+            :null
+            }
+
+
             <h1>Upload a new hamster for future battles!</h1>
 
             <p className="preamble">
