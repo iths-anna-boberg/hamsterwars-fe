@@ -29,12 +29,12 @@
 }
 
 .input-area label{
-    padding: 4.rem;
+    /* padding: 4.rem; */
     display: block;
 }
 
 .input-area input{
-    padding: .4rem;
+    /* padding: .4rem; */
     max-width: 100%;
     box-sizing: border-box;
     display: block;
