@@ -125,6 +125,7 @@ router.put('/:id/results', async (req, res)=>{
 
 //POST NY hamster
 router.post('/', async (req, res)=>{
+    console.log(req.body)
     
     try{
         await db.collection('hamsters')

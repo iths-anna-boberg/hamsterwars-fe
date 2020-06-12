@@ -38,7 +38,7 @@ router.post('/', async (req,res)=>{
     }
     try{
         let img = req.files.photo;
-        let path = `././tempholder/${img.name}`
+        let path = `./server/tempholder/${img.name}`
         
         img.mv(path, err=> {if(err) throw err});
         console.log('uploaded file moved to temp folder');
@@ -47,7 +47,7 @@ router.post('/', async (req,res)=>{
         
         fs.unlink(path, err=>{if(err) throw err})
         
-        res.status(200).send({msg: `${img.name} was added to hamster storage`})
+        res.status(200).send({msg: img.name})
         
     }catch(err){
         res.status(500).send(err)
