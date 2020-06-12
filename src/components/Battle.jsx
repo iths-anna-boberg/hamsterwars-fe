@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 import gameHandler from './functions/GameHandler';
+import fetchRandomHamster from './functions/FetchRandomHamster';
 import './Battle.css';
 
 
@@ -15,25 +16,13 @@ const Battle = ()=>{
     const hamsterName = !showModal ? 'hamster-name z-index' : 'hamster-name';
 
 
-    const fetchRandomHamster = async (setState)=>{
-
-        try{
-
-            const resp = await fetch(randomHamster);
-            const json = await resp.json();
-            console.log(json.id)
-            setState(json); 
-        }catch(err){
-            console.log(err);
-            return null;
-        }
-    }
+    
     
 
     useEffect(()=>{
 
-        fetchRandomHamster(setHamsterOne)
-        fetchRandomHamster(setHamsterTwo)
+        fetchRandomHamster(randomHamster, setHamsterOne)
+        fetchRandomHamster(randomHamster, setHamsterTwo)
 
     },[])
 
@@ -57,8 +46,8 @@ const Battle = ()=>{
     useEffect(()=>{
         if(!showModal){
             
-        fetchRandomHamster(setHamsterOne)
-        fetchRandomHamster(setHamsterTwo)
+        fetchRandomHamster(randomHamster, setHamsterOne)
+        fetchRandomHamster(randomHamster, setHamsterTwo)
         
         }
     }, [showModal])
