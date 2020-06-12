@@ -22,26 +22,29 @@
 }
 
 .button-row{
-    margin-top: 1rem;
+    margin: 2rem 0 7rem 0;
     display: flex;
     justify-content: center;
 }
 
 .input-area{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
     margin-bottom: .5rem;
+    width: 100%;
 }
 
 .input-area label{
     padding: 4.rem;
+    display: block;
 }
 
 .input-area input{
-    justify-self: end;
-    margin: 0 .6rem;
     padding: .4rem;
     max-width: 100%;
+    box-sizing: border-box;
     display: block;
 }
 
@@ -52,7 +55,7 @@
 }
 
 #age{
-    width: 1.5rem;
+    width: 3rem;
 }
 
 input[type=file]{
@@ -64,6 +67,10 @@ input[type=file]{
 
 .valid{
     background-color: palegreen;
+}
+
+.invalid{
+    color: var(--boxing-red);
 }
 
 
@@ -82,3 +89,35 @@ input[type=file]{
     cursor: pointer;
 }
 
+form{
+    max-width: 80%;
+}
+
+@media screen and (min-width: 600px){
+
+    .button-row{
+        margin: 2rem 0 3rem 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .input-area{
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .input-area input{
+        justify-self: end;
+        margin: 0 .6rem;
+        padding: .4rem;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .input-area label{
+        padding: 4.rem;
+        display: inline;
+    }
+
+}
