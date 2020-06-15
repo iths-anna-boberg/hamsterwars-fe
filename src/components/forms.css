@@ -28,19 +28,9 @@
     justify-content: center;
 }
 
-/*
 
-.input-area{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: .5rem;
-    width: 100%;
-} */
 
 .input-area label{
-    /* padding: 4.rem; */
     display: block;
     margin-top: .4rem;
 }
@@ -49,34 +39,8 @@
     margin-top: 1rem;
 }
 
-
-/* 
-.input-area input{
-    padding: .4rem;
-    max-width: 100%;
-    box-sizing: border-box;
-    display: block;
-} */
-
-
-/* 
-#photo-upload{
-    margin-top: 1rem;
-}
-
-#age{
-    width: 3rem;
-}
-*/
-
 input[type=file]{
     margin-top: 1rem;
-    /* background-color: var(--pink-rose);
-    color: white;
-    font-size: 1.3rem;
-    padding: .4rem;
-    max-width: 100%;
-    display: inline-block; */
 } 
 
 .valid{
@@ -109,10 +73,7 @@ input[type=file]{
     cursor: default;
     background-color: grey;
 }
-/* 
-form{
-    max-width: 80%;
-}
+
 
 @media screen and (min-width: 600px){
 
@@ -128,23 +89,5 @@ form{
         justify-content: center;
     }
 
-    .input-area{
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
 
-    .input-area input{
-        justify-self: end;
-        margin: 0 .6rem;
-        padding: .4rem;
-        max-width: 100%;
-        box-sizing: border-box;
-        display: block;
-    }
-
-    .input-area label{
-        padding: 4.rem;
-        display: inline;
-    }
-
-} */
+} 

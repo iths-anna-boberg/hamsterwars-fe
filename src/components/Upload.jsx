@@ -12,7 +12,7 @@ const Upload = ()=>{
 
     const [name, setName] = useState('');
     const [favFood, setFavFood] = useState('');
-    const [age, setAge] = useState(0);
+    const [age, setAge] = useState(null);
     const [loves, setLoves] = useState('');
     const [file, setFile] = useState(null);
 
