@@ -9,6 +9,7 @@ import Battle from './components/Battle';
 import Matchup from './components/Matchup';
 import Stats from './components/Stats';
 import Upload from './components/Upload';
+import BattleParams from './components/BattleParams';
 
 import './App.css';
 
@@ -27,8 +28,10 @@ function App() {
           </Switch>
             <main className="hamsterwars-main-container">
             <Switch>
-                
-                <Route path="/battle">
+                <Route path="/battle/:id1/:id2">
+                  <BattleParams />
+                </Route>
+                <Route exact path="/battle">
                   <Battle />
                 </Route>
                 <Route path="/matchup">

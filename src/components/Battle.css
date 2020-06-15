@@ -12,8 +12,8 @@
     font-weight: 700;
     border: 2px solid var(--pink-rose);
     border-radius: .6rem;
-    transition: transform 0.5s linear, 
-                background-color 1s ease;
+    transition: transform 0.2s linear, 
+                background-color 0.3s ease;
 }
 
 .battle-hamster{
