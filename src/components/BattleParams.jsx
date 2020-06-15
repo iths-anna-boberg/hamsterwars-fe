@@ -74,7 +74,7 @@ const BattleParams = ()=>{
 </svg>
                 </header>
                 <img className="winner-hamster" src={`/assets/${winner.imgName}`} alt={winner.imgName}/>
-                <p>{winner.name} has won {winner.wins} out of {winner.games} battles.</p>
+                <p>{winner.name} has won {winner.wins+1} out of {winner.games+1} battles.</p>
             </Modal>
             </>
             :null

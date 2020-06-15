@@ -44,12 +44,12 @@ function App() {
                   <Upload />
                 </Route>
                 <Route path="/">
-                  <Start />
+                   <Start />
                 </Route>
               </Switch>
             </main>
         </div>
-    </Router>
+     </Router>
   );
 }
 
