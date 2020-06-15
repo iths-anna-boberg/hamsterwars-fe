@@ -7,8 +7,8 @@ require('dotenv').config();
 const port = process.env.PORT || 2048;
 
 
-app.use(express.static(path.join(__dirname, 'client/build')));
-// app.use(express.static(__dirname + '/../build')); 
+// app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(__dirname + '/../build')); 
 
 
 app.use(express.json());
