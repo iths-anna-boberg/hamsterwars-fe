@@ -27,35 +27,25 @@ const Battle = ()=>{
     },[])
 
 
-    useEffect(()=>{
-
-        if(winner !==null){
-            setShowModal(true);
-            if(winner.id === hamsterOne.id){
-                gameHandler(winner.id, hamsterTwo.id)
-
-            }
-            if(winner.id === hamsterTwo.id){
-                gameHandler(winner.id, hamsterOne.id)
-
-            }
-        }
-
-    },[winner])
-
-    useEffect(()=>{
-        if(!showModal){
-            
-        fetchRandomHamster(randomHamster, setHamsterOne)
-        fetchRandomHamster(randomHamster, setHamsterTwo)
-        
-        }
-    }, [showModal])
-
     const hideModal = ()=>{
         setShowModal(false);
+        fetchRandomHamster(randomHamster, setHamsterOne)
+        fetchRandomHamster(randomHamster, setHamsterTwo)
     }
 
+    const handleWinner = (w) => {
+        setWinner(w);
+        setShowModal(true);
+        if(w.id === hamsterOne.id){
+            gameHandler(w.id, hamsterTwo.id)
+
+        }
+        if(w.id === hamsterTwo.id){
+            gameHandler(w.id, hamsterOne.id)
+
+        }
+
+    }
 
     return(
         <div className="content">
@@ -78,8 +68,8 @@ const Battle = ()=>{
 <path d="M419.752 316.352L417.571 318.412L417.6 318.443L417.63 318.473L419.752 316.352ZM419.624 358.912L421.624 361.148L421.656 361.119L421.687 361.09L419.624 358.912ZM413.672 358.912L411.55 361.033L411.581 361.064L411.612 361.093L413.672 358.912ZM412.52 325.76H415.52V320.403L410.952 323.202L412.52 325.76ZM408.552 328.192L410.095 330.764L410.107 330.757L410.119 330.75L408.552 328.192ZM403.752 327.552L401.516 329.552L401.545 329.584L401.574 329.615L403.752 327.552ZM403.176 322.944L400.652 321.322L400.61 321.388L400.571 321.456L403.176 322.944ZM404.648 321.536L406.136 324.141L406.16 324.127L406.184 324.113L404.648 321.536ZM414.312 315.776L412.908 313.125L412.841 313.16L412.776 313.199L414.312 315.776ZM417.064 318.2C417.314 318.2 417.418 318.251 417.571 318.412L421.933 314.292C420.634 312.917 418.947 312.2 417.064 312.2V318.2ZM417.63 318.473C417.745 318.587 417.84 318.719 417.84 319.104H423.84C423.84 317.271 423.21 315.567 421.873 314.231L417.63 318.473ZM417.84 319.104V356.096H423.84V319.104H417.84ZM417.84 356.096C417.84 356.375 417.778 356.528 417.561 356.734L421.687 361.09C423.091 359.76 423.84 358.035 423.84 356.096H417.84ZM417.623 356.676C417.419 356.86 417.151 357 416.616 357V363C418.47 363 420.208 362.415 421.624 361.148L417.623 356.676ZM416.616 357C416.079 357 415.869 356.86 415.732 356.731L411.612 361.093C413.011 362.414 414.763 363 416.616 363V357ZM415.793 356.791C415.601 356.599 415.52 356.429 415.52 356.096H409.52C409.52 357.982 410.206 359.689 411.55 361.033L415.793 356.791ZM415.52 356.096V325.76H409.52V356.096H415.52ZM410.952 323.202L406.984 325.634L410.119 330.75L414.087 328.318L410.952 323.202ZM407.008 325.62C406.82 325.732 406.669 325.768 406.504 325.768V331.768C407.789 331.768 409.003 331.42 410.095 330.764L407.008 325.62ZM406.504 325.768C406.303 325.768 406.161 325.733 405.93 325.489L401.574 329.615C402.879 330.992 404.571 331.768 406.504 331.768V325.768ZM405.987 325.552C405.697 325.227 405.664 325.025 405.664 324.864H399.664C399.664 326.665 400.356 328.256 401.516 329.552L405.987 325.552ZM405.664 324.864C405.664 324.708 405.696 324.58 405.78 324.432L400.571 321.456C399.973 322.503 399.664 323.655 399.664 324.864H405.664ZM405.699 324.566C405.831 324.361 405.972 324.235 406.136 324.141L403.159 318.931C402.129 319.52 401.289 320.332 400.652 321.322L405.699 324.566ZM406.184 324.113L415.848 318.353L412.776 313.199L403.112 318.959L406.184 324.113ZM415.715 318.427C415.883 318.339 416.279 318.2 417.064 318.2V312.2C415.63 312.2 414.191 312.445 412.908 313.125L415.715 318.427Z" fill="#2A4759"/>
 </svg>
                 </header>
-                    <img className="winner-hamster" src={`/assets/${winner.imgName}`} alt={winner.imgName}/>
-                    <p>{winner.name} has won {winner.wins} out of {winner.games} battles.</p>
+                <img className="winner-hamster" src={`/assets/${winner.imgName}`} alt={winner.imgName}/>
+                <p>{winner.name} has won {winner.wins} out of {winner.games} battles.</p>
             </Modal>
             </>
             :null
@@ -95,7 +85,7 @@ const Battle = ()=>{
                         ?<>
                         <div className={hamsterName}><h2>{hamsterOne.name}</h2></div>
                         <img className="battle-hamster" src={`/assets/${hamsterOne.imgName}`} alt={hamsterOne.imgName}/>
-                        <button className="bt-vote" onClick={()=>setWinner(hamsterOne)}>Vote for {hamsterOne.name}</button>
+                        <button className="bt-vote" onClick={()=>handleWinner(hamsterOne)}>Vote for {hamsterOne.name}</button>
                         </>
                         : 'no data'}
                 </article>
@@ -104,7 +94,7 @@ const Battle = ()=>{
                         ?<>
                         <div className={hamsterName}><h2>{hamsterTwo.name}</h2></div>
                         <img className="battle-hamster" src={`/assets/${hamsterTwo.imgName}`} alt={hamsterTwo.imgName}/>
-                        <button className="bt-vote" onClick={()=>setWinner(hamsterTwo)}>Vote for {hamsterTwo.name}</button>
+                        <button className="bt-vote" onClick={()=>handleWinner(hamsterTwo)}>Vote for {hamsterTwo.name}</button>
                         </>
                         : 'no data'}
 

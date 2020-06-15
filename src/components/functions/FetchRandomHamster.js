@@ -1,7 +1,7 @@
 const fetchRandomHamster = async (url, setState)=>{
 
     try{
-
+        console.log('FetchRandomHamster url:', url);
         const resp = await fetch(url);
         const json = await resp.json();
         console.log(json.id)

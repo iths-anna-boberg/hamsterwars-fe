@@ -7,8 +7,7 @@ require('dotenv').config();
 const port = process.env.PORT || 2048;
 
 
-// app.use(express.static(path.join(__dirname, 'client/build')));
-// app.use(express.static(path.join(__dirname, '/../build')));
+
 app.use(express.static(__dirname + '/../build')); 
 
 
@@ -35,9 +34,11 @@ app.use((req, res, next)=>{
     }
 })
 
-// app.get('*', (req,res) =>{
-//     res.sendFile(path.join(__dirname+'/client/build/index.html'));
-// });
+
+
+
+
+
 
 //routes
 const hamstersRoute = require('./routes/hamsters');
@@ -54,6 +55,11 @@ app.use('/api/stats', statsRoute);
 
 const assetsRoute = require('./routes/assets');
 app.use('/assets', assetsRoute);
+
+
+app.get('/*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/../build/index.html'));
+});
 
 
 app.listen(port, ()=>{
