@@ -65,7 +65,7 @@ const Battle = ()=>{
             <Modal show={showModal} handleClose={hideModal}>
                 <header className="winner-name">
                     <h1>The winner is {winner.name}!</h1>
-                    <svg width="280" height="200" viewBox="0 0 869 762" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="200" height="180" viewBox="0 0 869 762" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M509.243 266.707L615.578 259.889L569.157 348.849L568.305 350.481L570.076 350.985L642.239 371.544L779.649 410.69L648.96 428.26L580.051 437.524L578.021 437.797L578.894 439.65L624.309 536.047L516.612 511.934L514.635 511.491L514.789 513.511L519.732 578.634L529.144 702.635L461.384 591.101L425.878 532.658L424.794 530.875L423.449 532.47L335.907 636.274L325.218 494.965L325.077 493.093L323.282 493.644L257.915 513.728L133.166 552.057L222.593 465.641L269.559 420.257L271.15 418.719L269.132 417.811L169.485 372.965L270.809 322.427L272.533 321.567L271.277 320.107L225.934 267.396L139.837 167.308L262.538 225.099L327.07 255.494L328.552 256.192L329.117 254.654L365.834 154.679L428.415 232.808L429.658 234.361L430.809 232.738L468.153 180.077L539.039 80.1176L518.492 201.185L507.668 264.959L507.35 266.828L509.243 266.707Z" fill="#F2D5CE" stroke="#2A4759" strokeWidth="3"/>
 <rect x="393.5" y="405.5" width="53" height="144" fill="#F2AF5C" stroke="#2A4759" strokeWidth="3"/>
 <path d="M295.412 594.5L320.556 543.5H513.473L545.296 594.5H295.412Z" fill="#2A4759" stroke="#2A4759" strokeWidth="3"/>
@@ -79,6 +79,7 @@ const Battle = ()=>{
 </svg>
                 </header>
                     <img className="winner-hamster" src={`/assets/${winner.imgName}`} alt={winner.imgName}/>
+                    <p>{winner.name} has won {winner.wins} out of {winner.games} battles.</p>
             </Modal>
             </>
             :null

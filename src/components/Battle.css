@@ -6,8 +6,7 @@
 
 .bt-vote{
     background-color: var(--blush);
-    padding: .9rem 1.7rem;
-    font-size: 1.5rem;
+    margin: .6rem;
     font-family: 'Quicksand';
     color: var(--dark-petrol);
     font-weight: 700;
@@ -78,6 +77,11 @@
         font-weight: 700;
         font-size: 1.7rem;
         color: var(--dark-petrol);
+    }
+
+    .bt-vote{
+        padding: .9rem 1.7rem;
+        font-size: 1.5rem;
     }
 
     .bt-vote:hover{
