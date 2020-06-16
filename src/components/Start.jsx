@@ -15,15 +15,15 @@ const Start = ()=>{
             <p className="preamble">
                 Furry small creatures with bad eyesight compete for your affection.
             </p>
-            <div>
+            <div className="flex-column">
                 <h2>Already know which hamsters you want to battle?</h2>
                 <div className="flex-column">
 
                     <p>Enter their id's below and jump straight to the battle:</p>
 
-                    <div className="flex-column">
-                    <label htmlFor="id1">Id of hamster one: <input name="id1" type="text" onChange={e=>setId1(e.target.value)}/></label>
-                    <label htmlFor="id2">Id of hamster two: <input name="id2" type="text" onChange={e=>setId2(e.target.value)}/></label>
+                    <div>
+                    <label htmlFor="id1">Id of hamster one: <input name="id1" id="id1" type="text" onChange={e=>setId1(e.target.value)}/></label>
+                    <label htmlFor="id2">Id of hamster two: <input name="id2" id="id2" type="text" onChange={e=>setId2(e.target.value)}/></label>
                     </div>
                     {inputRegistered
                     ?
