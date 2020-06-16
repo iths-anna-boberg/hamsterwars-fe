@@ -10,6 +10,7 @@ import Matchup from './components/Matchup';
 import Stats from './components/Stats';
 import Upload from './components/Upload';
 import BattleParams from './components/BattleParams';
+import Gallery from './components/gallery/Gallery';
 
 import './App.css';
 
@@ -42,6 +43,9 @@ function App() {
                 </Route>
                 <Route path="/upload">
                   <Upload />
+                </Route>
+                <Route path="/gallery">
+                  <Gallery />
                 </Route>
                 <Route path="/">
                    <Start />
