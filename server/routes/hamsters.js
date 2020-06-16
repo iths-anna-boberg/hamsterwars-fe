@@ -58,6 +58,27 @@ router.get('/random', async (req, res)=>{
     
 })
 
+// GET Counter
+
+router.get('/hamstercount', async (req,res)=>{
+
+    try{
+
+        let counter = await db //har en separat collection med counter 
+        .collection('counter')
+        .doc('hamster')
+        .get()
+        .then(doc => doc.data())
+        res.send(counter);
+
+    }catch(err){
+        
+        res.status(500).send(err)
+        
+    }
+
+})
+
 
 //GET ID Returnerar ett objekt utifrån hamsterns id
 

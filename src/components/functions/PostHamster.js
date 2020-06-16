@@ -1,19 +1,26 @@
+import fetchCounter from './FetchCounter';
 
 const postHamster = async (name, favFood, age, loves, imgName, setState)=>{
 
-    let body = {
-        name,
-        favFood,
-        age,
-        loves,
-        imgName,
-        games : 0,
-        wins : 0,
-        defeats: 0,
-        id: Date.now()
-    }
 
+    
     try{
+        
+        let id = await fetchCounter();
+
+            let body = {
+                name,
+                favFood,
+                age,
+                loves,
+                imgName,
+                games : 0,
+                wins : 0,
+                defeats: 0,
+                id: id.hamsterCount+1
+            }
+
+
 
         let resp = await fetch(`/api/hamsters/`, {
             method: 'POST',
