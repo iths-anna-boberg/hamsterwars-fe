@@ -12,7 +12,7 @@ const Upload = ()=>{
 
     const [name, setName] = useState('');
     const [favFood, setFavFood] = useState('');
-    const [age, setAge] = useState(null);
+    const [age, setAge] = useState('');
     const [loves, setLoves] = useState('');
     const [file, setFile] = useState(null);
 
@@ -97,7 +97,7 @@ const Upload = ()=>{
                         type="text" 
                         name="age" id="age" 
                         onBlur={()=> setAgeTouched(true)}
-                        onChange={e=>setAge(Number(e.target.value))}/>
+                        onChange={e=>setAge(e.target.value)}/>
                         <div className="error">{ageError}</div>
                     </div>
                     <div className="input-area">

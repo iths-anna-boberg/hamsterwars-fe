@@ -1,11 +1,16 @@
 function validateAge(input){
 
-    if(!isNaN(input)){
+    if(input.length > 0){
 
-        return ['valid', '']
+        let age = Number(input);
+        if(!isNaN(age)){
+    
+            return ['valid', '']
+        }
     }else{
-        return ['invalid', "Age should be a number."]
-    }
+            return ['invalid', "Age should be a number."]
+        }
+
 }
 
 export default validateAge;
