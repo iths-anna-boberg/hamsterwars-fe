@@ -21,7 +21,6 @@ const Gallery = ()=>{
             return setIndex(0)
         }
         setIndex(index+1)
-        console.log(index)
     }
 
     const previous = ()=>{
@@ -29,7 +28,6 @@ const Gallery = ()=>{
             return setIndex(hamsters.length -1)
         }
         setIndex(index-1)
-        console.log(index)
     }
 
     return(
