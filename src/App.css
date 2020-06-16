@@ -37,14 +37,19 @@
 .bg-blue{
   background-color: var(--summer-blue);
   color: white;
+  flex: 1;
 }
 
 .bg-blush{
   background-color: var(--blush);
+  flex: 1;
+
 }
 
 .bg-golden{
   background-color: var(--golden-crest);
+  flex: 1;
+
 }
 
 
@@ -88,6 +93,7 @@
 
 .wrap-container{
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
