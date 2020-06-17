@@ -6,7 +6,6 @@ import Navbar from './components/nav/Navbar';
 
 import Start from './components/Start';
 import Battle from './components/Battle';
-import Matchup from './components/Matchup';
 import Stats from './components/Stats';
 import Upload from './components/Upload';
 import BattleParams from './components/BattleParams';
@@ -34,9 +33,6 @@ function App() {
                 </Route>
                 <Route exact path="/battle">
                   <Battle />
-                </Route>
-                <Route path="/matchup">
-                  <Matchup />
                 </Route>
                 <Route path="/stats">
                   <Stats />
