@@ -215,7 +215,7 @@ const Navbar = ()=>{
                     <NavLink to="/"><li>Home</li></NavLink>
                     <NavLink to="/battle"><li>Random Battle</li></NavLink>
                     <NavLink to="/stats"><li>Stats</li></NavLink>
-                    <NavLink to="/upload"><li>Upload</li></NavLink>
+                    {/* <NavLink to="/upload"><li>Upload</li></NavLink> */}
                     <NavLink to="/gallery"><li>Gallery</li></NavLink>
 
                 </ul>

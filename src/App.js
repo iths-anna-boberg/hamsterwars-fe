@@ -7,7 +7,7 @@ import Navbar from './components/nav/Navbar';
 import Start from './components/Start';
 import Battle from './components/Battle';
 import Stats from './components/Stats';
-import Upload from './components/Upload';
+// import Upload from './components/Upload';
 import BattleParams from './components/BattleParams';
 import Gallery from './components/gallery/Gallery';
 
@@ -37,9 +37,9 @@ function App() {
                 <Route path="/stats">
                   <Stats />
                 </Route>
-                <Route path="/upload">
+                {/* <Route path="/upload">
                   <Upload />
-                </Route>
+                </Route> */}
                 <Route path="/gallery">
                   <Gallery />
                 </Route>
