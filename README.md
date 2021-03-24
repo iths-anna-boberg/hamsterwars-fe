@@ -1,3 +1,3 @@
 # hamsterwars-fe
  school project
-[See this project live] (http://hamsterwarz.herokuapp.com/)
+See this project live: http://hamsterwarz.herokuapp.com/
